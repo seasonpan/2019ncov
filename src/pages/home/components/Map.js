@@ -46,7 +46,7 @@ class Map extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  loading: state.getIn(['home', 'loading']),
+  loading: state.getIn(['home', 'mapLoading']),
   numList: state.getIn(['home', 'overAllNum']).toJS(),
   updateTime: moment(state.getIn(['home', 'updateTime'])).format('YYYY-MM-DD HH:mm:ss')
 })

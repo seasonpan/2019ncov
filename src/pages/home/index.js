@@ -14,8 +14,8 @@ class Home extends Component{
         <Header/>
         <Nav/>
         <Map/>
-        <News/>
         <Rumor/>
+        <News/>
       </Fragment>
     )
   }

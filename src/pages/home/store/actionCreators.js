@@ -11,6 +11,11 @@ export const changeOverAllData = (value) => ({
   value
 })
 
+export const changeNewsData = (list) => ({
+  type: actionTypes.CHANGE_NEWS_DATA,
+  list
+})
+
 export const getOverAllData = () => {
   return (dispatch) => {
     axios.get('https://lab.isaaclin.cn/nCoV/api/overall').then(res => {
@@ -18,6 +23,17 @@ export const getOverAllData = () => {
       dispatch(changeOverAllData(result))
     }).catch(() => {
       console.log('get OverAll Data error')
+    })
+  }
+}
+
+export const getNewsData = () => {
+  return (dispatch) => {
+    axios.get('https://lab.isaaclin.cn/nCoV/api/news').then(res => {
+      const result = res.data.results
+      dispatch(changeNewsData(result))
+    }).catch(() => {
+      console.log('get News Data error')
     })
   }
 }
