@@ -4,6 +4,7 @@ import * as actionTypes from './actionTypes'
 const defaultState = fromJS({
   list: ['疫情地图', '实时播报', '辟谣信息'],
   active: 0,
+  loading: true,
   overAllNum: [
     {
       label: '全国确诊',
@@ -75,7 +76,8 @@ const getOverAllData = (state, action) => {
 
   return state.merge({
     overAllNum: fromJS(numList),
-    updateTime: action.value.updateTime
+    updateTime: action.value.updateTime,
+    loading: false
   })
 }
 

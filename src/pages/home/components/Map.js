@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from '../store'
+import { Icon } from 'antd';
 import moment from 'moment'
 import {
   InfoTop,
@@ -11,11 +12,14 @@ import {
 
 class Map extends Component {
   render() {
-    const { numList, updateTime } = this.props
+    const { numList, updateTime, loading } = this.props
     return (
       <Fragment>
         <InfoTop>
-          <div className="tip">截至 {updateTime}<span>数据来源：丁香园·丁香医生</span></div>
+          <div className="tip">
+            截至 {updateTime} { loading ? <Icon type="loading" /> : null }
+            <span>数据来源：丁香园·丁香医生</span>
+          </div>
           <div className="count-list">
             {
               numList.map((item, index) => (
@@ -42,6 +46,7 @@ class Map extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  loading: state.getIn(['home', 'loading']),
   numList: state.getIn(['home', 'overAllNum']).toJS(),
   updateTime: moment(state.getIn(['home', 'updateTime'])).format('YYYY-MM-DD HH:mm:ss')
 })
