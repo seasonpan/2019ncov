@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/2019ncov/static/js/main.5af9b9f1.chunk.js",
+    "main.js.map": "/2019ncov/static/js/main.5af9b9f1.chunk.js.map",
+    "runtime-main.js": "/2019ncov/static/js/runtime-main.9283c2dc.js",
+    "runtime-main.js.map": "/2019ncov/static/js/runtime-main.9283c2dc.js.map",
+    "static/css/2.9ddb28ea.chunk.css": "/2019ncov/static/css/2.9ddb28ea.chunk.css",
+    "static/js/2.f7063a3a.chunk.js": "/2019ncov/static/js/2.f7063a3a.chunk.js",
+    "static/js/2.f7063a3a.chunk.js.map": "/2019ncov/static/js/2.f7063a3a.chunk.js.map",
+    "index.html": "/2019ncov/index.html",
+    "precache-manifest.bb0662c2296e64163a641b364993706b.js": "/2019ncov/precache-manifest.bb0662c2296e64163a641b364993706b.js",
+    "service-worker.js": "/2019ncov/service-worker.js",
+    "static/css/2.9ddb28ea.chunk.css.map": "/2019ncov/static/css/2.9ddb28ea.chunk.css.map",
+    "static/js/2.f7063a3a.chunk.js.LICENSE.txt": "/2019ncov/static/js/2.f7063a3a.chunk.js.LICENSE.txt",
+    "static/media/bg.jpg": "/2019ncov/static/media/bg.1dc15fdd.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9283c2dc.js",
+    "static/css/2.9ddb28ea.chunk.css",
+    "static/js/2.f7063a3a.chunk.js",
+    "static/js/main.5af9b9f1.chunk.js"
+  ]
+}
