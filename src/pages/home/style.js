@@ -5,7 +5,6 @@ export const HeaderWrapper = styled.div`
   height: 160px;
   width: 100vw;
   background: url(${headerPic});
-  background-position: 0 -80px;
   background-size: cover;
   .mask{
     padding: 40px;
@@ -34,7 +33,7 @@ export const NavWrapper = styled.div`
   background: #fff;
   border-bottom: 1px solid #eee;
   .nav-item{
-    font-size: 1.1rem;
+    font-size: 1rem;
     flex: 1 1;
     text-align: center;
     cursor: pointer;
@@ -54,4 +53,27 @@ export const NavWrapper = styled.div`
       }
     }
   }
+`
+
+export const InfoTop = styled.div`
+  margin-top: 10px;
+  padding: 5px 10px;
+  background: #fff;
+`
+
+export const InfoBox = styled.div`
+  padding: 5px 10px;
+  background: #fff;
+`
+
+export const InfoTab = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 10px;
+  padding: 0 10px;
+  border-bottom: .1px solid #ebebeb;
+  background: #fff;
 `
