@@ -30,7 +30,7 @@ export const NavWrapper = styled.div`
   height: 50px;
   line-height: 50px;
   background: #fff;
-  border-bottom: 1px solid #eee;
+  border-bottom: .1px solid #ebebeb;
   .nav-item{
     font-size: 1rem;
     flex: 1 1;
@@ -58,6 +58,47 @@ export const InfoTop = styled.div`
   margin-top: 10px;
   padding: 5px 10px;
   background: #fff;
+  .tip{
+    margin: 10px 5px;
+    font-size: 0.58rem;
+    span{
+      float: right;
+    }
+  }
+  .count-list{
+    display: flex;
+    margin-bottom: 5px;
+  }
+`
+export const CountItem = styled.div`
+  flex: 1 1;
+  text-align: center;
+  & + :before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0.08rem;
+    height: 2rem;
+    margin-top: 1rem;
+    background-image: linear-gradient(180deg,#eee,#e1e1e1 51%,#fff);
+  }
+  .add{
+    margin: 5px 0;
+    font-size: 0.48rem;
+    font-weight:bold;
+    span{
+      color: ${(props) => props.color}
+    }
+  }
+  .count{
+    font-weight:bold;
+    color: ${(props) => props.color}
+  }
+  .label{
+    margin: 5px 0;
+    font-weight:bold;
+    font-size: 0.6rem;
+  }
 `
 
 export const InfoBox = styled.div`
