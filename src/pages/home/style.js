@@ -2,24 +2,23 @@ import styled from 'styled-components'
 import headerPic from '../../statics/bg.jpg'
 
 export const HeaderWrapper = styled.div`
-  height: 160px;
   width: 100vw;
   background: url(${headerPic});
   background-size: cover;
   .mask{
-    padding: 40px;
+    padding: 2rem;
     width:100%;
     height: 100%;
     background: rgba(0,0,0,0.5);
   }
   .sub-title{
-    font-size: 28px;
+    font-size: 1.3rem;
     font-weight:bold;
     color: #fff;
   }
   .title{
     margin-top: 10px;
-    font-size: 42px;
+    font-size: 2rem;
     font-weight:bold;
     letter-spacing: 2px;
     color: #fff;
