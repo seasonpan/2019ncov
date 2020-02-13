@@ -114,10 +114,60 @@ export const InfoTab = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 30px;
-  line-height: 30px;
+  height: 40px;
+  line-height: 40px;
   margin-top: 10px;
-  padding: 0 10px;
+  padding: 0 30px;
   border-bottom: .1px solid #ebebeb;
   background: #fff;
+  &:before{
+    content: '';
+      display: block;
+      position: absolute;
+      left: 17px;
+      height: 1.1rem;
+      width: 0.2rem;
+      background: #369bca;
+  }
+`
+export const NewsWrapper = styled.div`
+  .ant-timeline{
+    margin: 1rem;
+  }
+  .time{
+    font-size: 0.75rem;
+    .ant-tag{
+      margin-left: 5px;
+      padding: 1px 3px 2px 3px;
+      font-size: 0.6rem;
+      line-height: 0.7rem;
+    }
+  }
+  .news-box{
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    background: #fff;
+    .title{
+      margin-bottom: 0.6rem;
+      color: #222;
+      font-weight: 500;
+    }
+    .summary{
+      font-size: 0.75rem;
+      color: #737373;
+    }
+    .source{
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #222;
+    }
+    a {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
 `

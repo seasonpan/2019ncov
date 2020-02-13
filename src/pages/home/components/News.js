@@ -1,31 +1,38 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from '../store'
-import { Icon, Timeline } from 'antd';
+import { Icon, Timeline, Tag } from 'antd';
 import moment from 'moment'
 import {
-  InfoTab
+  InfoTab,
+  NewsWrapper
 } from '../style'
 
 class News extends Component {
   render() {
     const { newList, newsLoading } = this.props
     return (
-      <Fragment>
+      <NewsWrapper>
         <InfoTab>实时新闻{newsLoading ? <Icon type="loading" /> : null}</InfoTab>
         <Timeline pending={true}>
           {
             newList.map((item, index) => (
-              <Timeline.Item key={index}>
-                <div>{moment(item.pubDate).format('YYYY-MM-DD HH:mm:ss')}</div>
-                {item.title}
-                <div>{item.summary}</div>
-                <div>{item.infoSource}</div>
+              <Timeline.Item key={index} color="#369bca">
+                <div className="time">
+                  {moment(item.pubDate).format('YYYY-MM-DD HH:mm:ss')}
+                  {index === 0 ? <Tag color="#f50">最新</Tag> : null}
+                </div>
+                <div className="news-box">
+                  <div className="title">{item.title}</div>
+                  <div className="summary">{item.summary}</div>
+                  <div className="source">来源：{item.infoSource}</div>
+                  <a href={item.sourceUrl}> </a>
+                </div>
               </Timeline.Item>
             ))
           }
         </Timeline>
-      </Fragment>
+      </NewsWrapper>
     )
   }
   componentDidMount() {
