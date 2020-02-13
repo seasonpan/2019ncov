@@ -24,7 +24,7 @@ class Map extends Component {
             {
               numList.map((item, index) => (
                 <CountItem className="count-item" key={index} color={item.color}>
-                  <div className="add">较昨日<span>+{item.incr}</span></div>
+                  <div className="add">较昨日{item.incr ? <span>+{item.incr}</span> : <span> --</span> }</div>
                   <strong className="count">{item.count}</strong>
                   <div className="label">{item.label}</div>
                 </CountItem>

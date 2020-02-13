@@ -7,19 +7,31 @@ const defaultState = fromJS({
   mapLoading: true,
   overAllNum: [
     {
-      label: '全国确诊',
+      label: '现存确诊',
       color: '#d35030',
-      count: 44763,
-      incr: 2055
+      count: '--',
+      incr: null
     },
     {
-      label: '疑似病例',
+      label: '现存疑似',
       color: '#d9830f',
       count: 16067,
       incr: 3342
     },
     {
-      label: '重症人数',
+      label: '治愈人数',
+      color: '#72b6a4',
+      count: 5034,
+      incr: 1036
+    },
+    {
+      label: '累计确诊',
+      color: '#93262b',
+      count: 44763,
+      incr: 2055
+    },
+    {
+      label: '现存重症',
       color: '#8f5b4e',
       count: 8204,
       incr: 871
@@ -29,12 +41,6 @@ const defaultState = fromJS({
       color: '#647191',
       count: 1115,
       incr: 98
-    },
-    {
-      label: '治愈人数',
-      color: '#72b6a4',
-      count: 5034,
-      incr: 1036
     }
   ],
   updateTime: 1581511285083,
@@ -136,19 +142,32 @@ const defaultState = fromJS({
 const getOverAllData = (state, action) => {
   let numList = [
     {
-      label: '全国确诊',
+      label: '现存确诊',
       color: '#d35030',
-      count: action.value.confirmedCount,
-      incr: action.value.confirmedIncr
+      count: action.value.currentConfirmedCount,
+      incr: action.value.currentConfirmedIncr
     },
     {
-      label: '疑似病例',
+      label: '现存疑似',
       color: '#d9830f',
       count: action.value.suspectedCount,
       incr: action.value.suspectedIncr
     },
     {
-      label: '重症人数',
+      label: '治愈人数',
+      color: '#72b6a4',
+      count: action.value.curedCount,
+      incr: action.value.curedIncr
+    },
+    
+    {
+      label: '累计确诊',
+      color: '#93262b',
+      count: action.value.confirmedCount,
+      incr: action.value.confirmedIncr
+    },
+    {
+      label: '现存重症',
       color: '#8f5b4e',
       count: action.value.seriousCount,
       incr: action.value.seriousIncr
@@ -158,12 +177,6 @@ const getOverAllData = (state, action) => {
       color: '#647191',
       count: action.value.deadCount,
       incr: action.value.deadIncr
-    },
-    {
-      label: '治愈人数',
-      color: '#72b6a4',
-      count: action.value.curedCount,
-      incr: action.value.curedIncr
     }
   ]
 

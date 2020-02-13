@@ -67,13 +67,14 @@ export const InfoTop = styled.div`
   }
   .count-list{
     display: flex;
+    flex-flow: wrap;
     margin-bottom: 5px;
   }
 `
 export const CountItem = styled.div`
-  flex: 1 1;
+  width: 33.3333333%;
   text-align: center;
-  & + :before {
+  &:not(:nth-child(3n+1)):before {
     content: "";
     display: block;
     position: absolute;
@@ -81,6 +82,9 @@ export const CountItem = styled.div`
     height: 2rem;
     margin-top: 1rem;
     background-image: linear-gradient(180deg,#eee,#e1e1e1 51%,#fff);
+  }
+  &:nth-child(n+4){
+    margin-top: 3px;
   }
   .add{
     margin: 5px 0;
@@ -97,7 +101,7 @@ export const CountItem = styled.div`
   .label{
     margin: 5px 0;
     font-weight:bold;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
   }
 `
 

@@ -13,10 +13,10 @@ class News extends Component {
     return (
       <Fragment>
         <InfoTab>实时新闻{newsLoading ? <Icon type="loading" /> : null}</InfoTab>
-        <Timeline>
+        <Timeline pending={true}>
           {
             newList.map((item, index) => (
-              <Timeline.Item>
+              <Timeline.Item key={index}>
                 <div>{moment(item.pubDate).format('YYYY-MM-DD HH:mm:ss')}</div>
                 {item.title}
                 <div>{item.summary}</div>
