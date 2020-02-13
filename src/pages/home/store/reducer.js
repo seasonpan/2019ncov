@@ -137,7 +137,7 @@ const defaultState = fromJS({
       "provinceId": "11"
     }
   ],
-  rumorList: ['page1', 'page2', 'page3']
+  rumorList: ['page1', 'page2', 'page3', 'page4', 'page5']
 })
 
 const getOverAllData = (state, action) => {
