@@ -173,7 +173,18 @@ export const NewsWrapper = styled.div`
 `
 
 export const RumorWrapper = styled.div`
-  .swiper-slide{
-    background: #fff;
+  .swiper-container{
+    .swiper-slide{
+      padding: 10px 0 33px 0;
+      .rumor-box{
+        height: 20rem;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        border: .05rem solid #ebebeb;
+        box-shadow: 0 0.03rem 0.5rem 0 rgba(0,0,0,.08);
+        background: #fff;
+      }
+    }
   }
+
 `
