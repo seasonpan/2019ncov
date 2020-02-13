@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { GlobalStyle } from './style'
 import 'antd/dist/antd.css'
+import 'swiper/css/swiper.min.css'
 import store from './store';
 import Home from './pages/home'
 

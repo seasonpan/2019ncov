@@ -136,7 +136,8 @@ const defaultState = fromJS({
       "provinceName": "北京市",
       "provinceId": "11"
     }
-  ]
+  ],
+  rumorList: ['page1', 'page2', 'page3']
 })
 
 const getOverAllData = (state, action) => {

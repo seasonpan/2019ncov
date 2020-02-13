@@ -171,3 +171,7 @@ export const NewsWrapper = styled.div`
     }
   }
 `
+
+export const RumorWrapper = styled.div`
+
+`
