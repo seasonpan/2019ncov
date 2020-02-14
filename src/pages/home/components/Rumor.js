@@ -21,10 +21,15 @@ class Rumor extends Component {
               rumorList.map((item, index) => (
                 <div className="swiper-slide" key={index}>
                   <div className="rumor-box">
-                    <div>谣言</div>
-                    <div>{item.title}</div>
-                    <div>{item.mainSummary}</div>
-                    <div>{item.body}</div>
+                    <div className="header">
+                      <div className="rumor">谣言</div>
+                      <div className="title">{item.title}</div>
+                      <img src="https://assets.dxycdn.com/gitrepo/ncov-mobile/dist/static/badge-big@2x.5395c013.png"/>
+                    </div>
+                    <div className="content">
+                      <div className="summary">{item.mainSummary}</div>
+                      <div className="body">{item.body}</div>
+                    </div>
                   </div>
                 </div>
               ))
@@ -44,7 +49,7 @@ class Rumor extends Component {
       observer: true,
       observeParents: true,
       // spaceBetween: 10,
-      slidesPerView: 1.2,
+      slidesPerView: 1.3,
       centeredSlides: true,
       effect: 'coverflow',
       coverflowEffect: {

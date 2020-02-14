@@ -174,6 +174,13 @@ export const NewsWrapper = styled.div`
 
 export const RumorWrapper = styled.div`
   .swiper-container{
+    .swiper-pagination-bullet-active{
+      background: #4fa5d1;
+    }
+    .swiper-pagination-bullet{
+      width: 6px;
+      height: 6px;
+    }
     .swiper-slide{
       padding: 10px 0 33px 0;
       .rumor-box{
@@ -183,6 +190,46 @@ export const RumorWrapper = styled.div`
         border: .05rem solid #ebebeb;
         box-shadow: 0 0.03rem 0.5rem 0 rgba(0,0,0,.08);
         background: #fff;
+        .header{
+          height: 7rem;
+          padding: 0.6rem;
+          color: #fff;
+          background: #4fa5d1;
+          .rumor{
+            margin-top: 0.8rem;
+            font-size: 2rem;
+          }
+          .title{
+            margin-top: 1rem;
+            font-weight: 600;
+            font-size: 16px;
+          }
+          img{
+            position: absolute;
+            top: 1.1rem;
+            right: 0.6rem;
+            z-index: 2;
+            width: 4.5rem;
+            height: 4.5rem;
+          }
+        }
+        .content{
+          padding: 0.6rem;
+          .summary{
+            line-height: 20px;
+            color: #333;
+            font-weight: 700;
+            font-size: 14px;
+          }
+          .body{
+            margin-top: 0.3rem;
+            overflow: hidden;
+            color: #666;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
       }
     }
   }
