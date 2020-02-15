@@ -24,7 +24,7 @@ class Rumor extends Component {
                     <div className="header">
                       <div className="rumor">谣言</div>
                       <div className="title">{item.title}</div>
-                      <img src="https://assets.dxycdn.com/gitrepo/ncov-mobile/dist/static/badge-big@2x.5395c013.png"/>
+                      <img alt="" src="https://assets.dxycdn.com/gitrepo/ncov-mobile/dist/static/badge-big@2x.5395c013.png"/>
                     </div>
                     <div className="content">
                       <div className="summary">{item.mainSummary}</div>

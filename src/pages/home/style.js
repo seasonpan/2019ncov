@@ -67,6 +67,7 @@ export const InfoTop = styled.div`
   }
   .count-list{
     display: flex;
+    width: 100%;
     flex-flow: wrap;
     margin-bottom: 5px;
   }
@@ -78,7 +79,7 @@ export const CountItem = styled.div`
     content: "";
     display: block;
     position: absolute;
-    width: 0.08rem;
+    width: 1px;
     height: 2rem;
     margin-top: 1rem;
     background-image: linear-gradient(180deg,#eee,#e1e1e1 51%,#fff);
