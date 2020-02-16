@@ -11,13 +11,13 @@ class Nav extends Component {
     }
   }
   render() {
-    const { list, active, handleItemClick } = this.props
+    const { list, active} = this.props
     return (
       <NavWrapper className={this.state.wrapperStyle}>
         {
           list.map((item, index) => (
             <div
-              onClick={() => handleItemClick(index)}
+              onClick={() => this.handleItemClick(index)}
               className={index === active ? 'nav-item active' : 'nav-item'}
               key={index}>
               {item}
@@ -33,23 +33,48 @@ class Nav extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', () => this.changeNavPosition())
+    window.removeEventListener('scroll', () => this.changeNav())
   }
 
   bindEvents() {
-    window.addEventListener('scroll', () => this.changeNavPosition())
+    window.addEventListener('scroll', () => this.changeNav())
   }
 
-  changeNavPosition() {
-    console.log(document.documentElement.scrollTop,this.props.headerHeight)
-    if (document.documentElement.scrollTop > this.props.headerHeight) {
-      this.setState({
+  handleItemClick(index){
+    switch (index) {
+      case 0:
+        window.scrollTo(0, this.props.headerHeight)
+        break;
+      case 1:
+        window.scrollTo(0, this.props.rumorOffSetHeight - 100)
+        break;
+      case 2:
+        window.scrollTo(0, this.props.newsOffSetHeight - 100)
+        break;
+      default:
+        break;
+    }
+    this.props.changeNavActive(index)
+  }
+
+  changeNav() {
+    const scrollTop = document.documentElement.scrollTop
+    if (scrollTop >= this.props.headerHeight) {
+      (this.state.wrapperStyle !== 'fixed') && this.setState({
         wrapperStyle: 'fixed'
       })
-    } else {
-      this.setState({
+    } else if (scrollTop < this.props.headerHeight) {
+      (this.state.wrapperStyle !== 'static') && this.setState({
         wrapperStyle: 'static'
       })
+    }
+    //nav 高度50px 置顶后要减去 缺失的nav和置顶的nav，共100ox
+    if (scrollTop >= this.props.newsOffSetHeight - 100) {
+      (this.props.active !== 2) && this.props.changeNavActive(2)
+    } else if (scrollTop >= this.props.rumorOffSetHeight - 100) {
+      (this.props.active !== 1) && this.props.changeNavActive(1)
+    } else {
+      (this.props.active !== 0) && this.props.changeNavActive(0)
     }
   }
 }
@@ -57,11 +82,13 @@ class Nav extends Component {
 const mapStateToProps = (state) => ({
   list: state.getIn(['home', 'list']).toJS(),
   active: state.getIn(['home', 'active']),
-  headerHeight: state.getIn(['home', 'headerHeight'])
+  headerHeight: state.getIn(['home', 'headerHeight']),
+  newsOffSetHeight: state.getIn(['home', 'newsOffSetHeight']),
+  rumorOffSetHeight: state.getIn(['home', 'rumorOffSetHeight'])
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  handleItemClick(index) {
+  changeNavActive(index) {
     dispatch(actionCreators.changeNavActive(index))
   }
 })

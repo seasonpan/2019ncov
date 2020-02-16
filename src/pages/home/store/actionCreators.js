@@ -25,6 +25,14 @@ export const changeHeaderHeight = (value) => ({
   type: actionTypes.CHANGE_HEADER_HEIGHT,
   value
 })
+export const changeNewsHeight = (value) => ({
+  type: actionTypes.CHANGE_NEWS_HEIGHT,
+  value
+})
+export const changeRumorHeight = (value) => ({
+  type: actionTypes.CHANGE_RUMOR_HEIGHT,
+  value
+})
 
 export const getOverAllData = () => {
   return (dispatch) => {

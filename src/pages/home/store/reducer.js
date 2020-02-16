@@ -5,6 +5,8 @@ const defaultState = fromJS({
   list: ['疫情地图', '辟谣信息', '实时播报'],
   active: 0,
   headerHeight: 0,
+  newsOffSetHeight: 0,
+  rumorOffSetHeight: 0,
   mapLoading: true,
   overAllNum: [
     {
@@ -46,7 +48,7 @@ const defaultState = fromJS({
   ],
   updateTime: 1581511285083,
   newsLoading: true,
-  newsList:[
+  newsList: [
     {
       "title": "西藏唯一新冠肺炎患者治愈出院",
       "summary": "西藏唯一新冠肺炎患者治愈出院，实现确诊病例和疑似病例清零。2月12日下午，自治区卫生健康委党组书记王云亭在自治区第三人民医院现场接受央视网、新华网、人民日报、西藏卫视等媒体采访。王云亭书记表示，西藏唯一新冠肺炎患者治愈出院，标志着在全国31个省（自治区、直辖市）中，我区首先实现确诊病例和疑似病例清零。\n            \n        \n    ",
@@ -233,7 +235,7 @@ const getOverAllData = (state, action) => {
       count: action.value.curedCount,
       incr: action.value.curedIncr
     },
-    
+
     {
       label: '累计确诊',
       color: '#93262b',
@@ -287,6 +289,10 @@ export default (state = defaultState, action) => {
       return getRumorData(state, action)
     case actionTypes.CHANGE_HEADER_HEIGHT:
       return state.set('headerHeight', action.value)
+    case actionTypes.CHANGE_NEWS_HEIGHT:
+      return state.set('newsOffSetHeight', action.value)
+    case actionTypes.CHANGE_RUMOR_HEIGHT:
+      return state.set('rumorOffSetHeight', action.value)
     default:
       return state
   }

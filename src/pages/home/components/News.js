@@ -12,7 +12,7 @@ class News extends Component {
   render() {
     const { newList, newsLoading } = this.props
     return (
-      <NewsWrapper>
+      <NewsWrapper ref={self => this.wrapperID = self}>
         <InfoTab>实时新闻{newsLoading ? <Icon type="loading" /> : null}</InfoTab>
         <Timeline pending={true}>
           {
@@ -37,17 +37,22 @@ class News extends Component {
   }
   componentDidMount() {
     this.props.getNewsList()
+    this.props.changeNewsHeight(this.wrapperID.offsetTop)
   }
 }
 
 const mapStateToProps = (state) => ({
   newList: state.getIn(['home', 'newsList']).toJS(),
-  newsLoading: state.getIn(['home', 'newsLoading'])
+  newsLoading: state.getIn(['home', 'newsLoading']),
+  active: state.getIn(['home', 'active'])
 })
 
 const mapDispatchToProps = (dispatch) => ({
   getNewsList() {
     dispatch(actionCreators.getNewsData())
+  },
+  changeNewsHeight(h){
+    dispatch(actionCreators.changeNewsHeight(h))
   }
 })
 

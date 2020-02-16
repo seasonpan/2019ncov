@@ -6,7 +6,7 @@ import { actionCreators } from '../store'
 class Header extends Component {
   render() {
     return (
-      <HeaderWrapper ref={self => this.wrapper = self}>
+      <HeaderWrapper ref={self => this.wrapperID = self}>
         <div className="mask">
           <div className="sub-title">新型冠状病毒肺炎</div>
           <div className="title">疫情实时动态</div>
@@ -16,7 +16,7 @@ class Header extends Component {
   }
 
   componentDidMount(){
-    this.props.changeHeaderHeight(this.wrapper.offsetHeight)
+    this.props.changeHeaderHeight(this.wrapperID.offsetHeight)
   }
 }
 

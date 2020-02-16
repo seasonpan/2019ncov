@@ -17,7 +17,7 @@ class Map extends Component {
     const { numList, updateTime, loading } = this.props
     return (
       <Fragment>
-        <InfoTop>
+        <InfoTop ref={self => this.wrapperID = self}>
           <div className="tip">
             截至 {updateTime} {loading ? <Icon type="loading" /> : null}
             <span>数据来源：丁香园·丁香医生</span>
@@ -291,7 +291,8 @@ class Map extends Component {
 const mapStateToProps = (state) => ({
   loading: state.getIn(['home', 'mapLoading']),
   numList: state.getIn(['home', 'overAllNum']).toJS(),
-  updateTime: moment(state.getIn(['home', 'updateTime'])).format('YYYY-MM-DD HH:mm:ss')
+  updateTime: moment(state.getIn(['home', 'updateTime'])).format('YYYY-MM-DD HH:mm:ss'),
+  active: state.getIn(['home', 'active'])
 })
 
 const mapDispatchToProps = (dispatch) => ({

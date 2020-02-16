@@ -13,7 +13,7 @@ class Rumor extends Component {
   render() {
     const { rumorList, rumorLading } = this.props
     return (
-      <RumorWrapper>
+      <RumorWrapper ref={self => this.wrapperID = self}>
         <InfoTab>辟谣信息{rumorLading ? <Icon type="loading" /> : null}</InfoTab>
         <div className="swiper-container" ref={self => this.swiperID = self}>
           <div className="swiper-wrapper">
@@ -43,6 +43,7 @@ class Rumor extends Component {
 
   componentDidMount() {
     this.props.getRumorList()
+    this.props.changeRumorHeight(this.wrapperID.offsetTop)
 
     new Swiper(this.swiperID, {
       // init: false,
@@ -69,12 +70,16 @@ class Rumor extends Component {
 
 const mapStateToProps = (state) => ({
   rumorList: state.getIn(['home', 'rumorList']).toJS().splice(0, 5),
-  rumorLading: state.getIn(['home', 'rumorLading'])
+  rumorLading: state.getIn(['home', 'rumorLading']),
+  active: state.getIn(['home', 'active'])
 })
 
 const mapDispatchToProps = (dispatch) => ({
   getRumorList() {
     dispatch(actionCreators.getRumorData())
+  },
+  changeRumorHeight(h){
+    dispatch(actionCreators.changeRumorHeight(h))
   }
 })
 
