@@ -21,6 +21,11 @@ export const changeRumorData = (list) => ({
   list
 })
 
+export const changeHeaderHeight = (value) => ({
+  type: actionTypes.CHANGE_HEADER_HEIGHT,
+  value
+})
+
 export const getOverAllData = () => {
   return (dispatch) => {
     axios.get('https://lab.isaaclin.cn/nCoV/api/overall').then(res => {

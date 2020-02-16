@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "antd": "^3.26.9",
     "axios": "^0.19.2",
+    "echarts": "^4.6.0",
     "immutable": "^4.0.0-rc.12",
     "moment": "^2.24.0",
     "react": "^16.12.0",

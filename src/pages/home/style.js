@@ -31,6 +31,25 @@ export const NavWrapper = styled.div`
   line-height: 50px;
   background: #fff;
   border-bottom: .1px solid #ebebeb;
+  &.static{
+    position: static;
+  }
+  &.fixed{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 9999;
+    background: #369bca;
+    color: #fff;
+    .nav-item{
+      &.active{
+        color: #fff;
+        &::before{
+          background: #fff;
+        }
+      }
+    }
+  }
   .nav-item{
     font-size: 1rem;
     flex: 1 1;

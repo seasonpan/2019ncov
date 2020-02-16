@@ -4,6 +4,7 @@ import * as actionTypes from './actionTypes'
 const defaultState = fromJS({
   list: ['疫情地图', '辟谣信息', '实时播报'],
   active: 0,
+  headerHeight: 0,
   mapLoading: true,
   overAllNum: [
     {
@@ -284,6 +285,8 @@ export default (state = defaultState, action) => {
       return getNewsData(state, action)
     case actionTypes.CHANGE_RUMOR_DATA:
       return getRumorData(state, action)
+    case actionTypes.CHANGE_HEADER_HEIGHT:
+      return state.set('headerHeight', action.value)
     default:
       return state
   }
