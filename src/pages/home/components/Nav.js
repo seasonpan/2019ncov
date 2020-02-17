@@ -11,7 +11,7 @@ class Nav extends Component {
     }
   }
   render() {
-    const { list, active} = this.props
+    const { list, active } = this.props
     return (
       <NavWrapper className={this.state.wrapperStyle}>
         {
@@ -40,7 +40,7 @@ class Nav extends Component {
     window.addEventListener('scroll', () => this.changeNav())
   }
 
-  handleItemClick(index){
+  handleItemClick(index) {
     switch (index) {
       case 0:
         window.scrollTo(0, this.props.headerHeight)
@@ -58,7 +58,8 @@ class Nav extends Component {
   }
 
   changeNav() {
-    const scrollTop = document.documentElement.scrollTop
+    const scrollTop = document.body.scrollTop + document.documentElement.scrollTop //这两个值总会有一个恒为0
+    this.setState({ scrollTop })
     if (scrollTop >= this.props.headerHeight) {
       (this.state.wrapperStyle !== 'fixed') && this.setState({
         wrapperStyle: 'fixed'
