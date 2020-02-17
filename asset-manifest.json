@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/2019ncov/static/js/main.d368edcd.chunk.js",
-    "main.js.map": "/2019ncov/static/js/main.d368edcd.chunk.js.map",
+    "main.js": "/2019ncov/static/js/main.f6897068.chunk.js",
+    "main.js.map": "/2019ncov/static/js/main.f6897068.chunk.js.map",
     "runtime-main.js": "/2019ncov/static/js/runtime-main.9283c2dc.js",
     "runtime-main.js.map": "/2019ncov/static/js/runtime-main.9283c2dc.js.map",
     "static/css/2.a99c1c44.chunk.css": "/2019ncov/static/css/2.a99c1c44.chunk.css",
     "static/js/2.7b4d4998.chunk.js": "/2019ncov/static/js/2.7b4d4998.chunk.js",
     "static/js/2.7b4d4998.chunk.js.map": "/2019ncov/static/js/2.7b4d4998.chunk.js.map",
     "index.html": "/2019ncov/index.html",
-    "precache-manifest.ab406089412c415a1451f838edbbf75e.js": "/2019ncov/precache-manifest.ab406089412c415a1451f838edbbf75e.js",
+    "precache-manifest.7e03a7e1a58e0d0145a1beb0720bcaa7.js": "/2019ncov/precache-manifest.7e03a7e1a58e0d0145a1beb0720bcaa7.js",
     "service-worker.js": "/2019ncov/service-worker.js",
     "static/css/2.a99c1c44.chunk.css.map": "/2019ncov/static/css/2.a99c1c44.chunk.css.map",
     "static/js/2.7b4d4998.chunk.js.LICENSE.txt": "/2019ncov/static/js/2.7b4d4998.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.9283c2dc.js",
     "static/css/2.a99c1c44.chunk.css",
     "static/js/2.7b4d4998.chunk.js",
-    "static/js/main.d368edcd.chunk.js"
+    "static/js/main.f6897068.chunk.js"
   ]
 }
