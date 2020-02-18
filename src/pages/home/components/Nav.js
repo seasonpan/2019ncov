@@ -13,18 +13,21 @@ class Nav extends Component {
   render() {
     const { list, active } = this.props
     return (
-      <NavWrapper className={this.state.wrapperStyle}>
-        {
-          list.map((item, index) => (
-            <div
-              onClick={() => this.handleItemClick(index)}
-              className={index === active ? 'nav-item active' : 'nav-item'}
-              key={index}>
-              {item}
-            </div>
-          ))
-        }
-      </NavWrapper>
+      <div style={{height: '50px'}}>
+        <NavWrapper className={this.state.wrapperStyle}>
+          {
+            list.map((item, index) => (
+              <div
+                onClick={() => this.handleItemClick(index)}
+                className={index === active ? 'nav-item active' : 'nav-item'}
+                key={index}>
+                {item}
+              </div>
+            ))
+          }
+        </NavWrapper>
+      </div>
+
     )
   }
 
@@ -46,10 +49,10 @@ class Nav extends Component {
         window.scrollTo(0, this.props.headerHeight)
         break;
       case 1:
-        window.scrollTo(0, this.props.rumorOffSetHeight - 100)
+        window.scrollTo(0, this.props.rumorOffSetHeight - 50)
         break;
       case 2:
-        window.scrollTo(0, this.props.newsOffSetHeight - 100)
+        window.scrollTo(0, this.props.newsOffSetHeight - 50)
         break;
       default:
         break;
@@ -70,9 +73,9 @@ class Nav extends Component {
       })
     }
     //nav 高度50px 置顶后要减去 缺失的nav和置顶的nav，共100ox
-    if (scrollTop >= this.props.newsOffSetHeight - 100) {
+    if (scrollTop >= this.props.newsOffSetHeight - 50) {
       (this.props.active !== 2) && this.props.changeNavActive(2)
-    } else if (scrollTop >= this.props.rumorOffSetHeight - 100) {
+    } else if (scrollTop >= this.props.rumorOffSetHeight - 50) {
       (this.props.active !== 1) && this.props.changeNavActive(1)
     } else {
       (this.props.active !== 0) && this.props.changeNavActive(0)
